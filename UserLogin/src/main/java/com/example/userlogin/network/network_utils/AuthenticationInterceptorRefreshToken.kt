@@ -2,6 +2,10 @@ package com.example.userlogin.network.network_utils
 
 import android.content.Context
 import com.example.userlogin.network.NetworkController
+import com.example.userlogin.network.network_utils.NetworkUrls.Companion.IS_FIRST_TIME_LOGIN_WITH_LOGIN_ID
+import com.example.userlogin.network.network_utils.NetworkUrls.Companion.LOGIN_MASTERS
+import com.example.userlogin.network.network_utils.NetworkUrls.Companion.LOGIN_WITH_LOGIN_ID
+import com.example.userlogin.network.network_utils.NetworkUrls.Companion.REFRESH_TOKEN
 import com.example.userlogin.utils.Constants
 import okhttp3.Interceptor
 import okhttp3.Response
