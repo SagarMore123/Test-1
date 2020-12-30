@@ -1,5 +1,6 @@
 package com.example.userlogin.fragments
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +23,7 @@ import com.example.userlogin.viewmodels.FirstTimeLoginViewModel
  */
 class LoginUserFragment : Fragment() {
 
- /*   companion object{
+    companion object{
 
         lateinit var binding: FragmentLoginUserBinding
 
@@ -30,8 +31,8 @@ class LoginUserFragment : Fragment() {
             binding.proceedButton.background = bgColor
         }
     }
-*/
-    lateinit var binding: FragmentLoginUserBinding
+
+//    lateinit var binding: FragmentLoginUserBinding
     lateinit var viewModel: FirstTimeLoginViewModel
     var progressBar = CustomProgressBar()
     lateinit var loginResponseDTO: LoginResponseDTO
