@@ -42,10 +42,12 @@ class LoginUserActivity : AppCompatActivity() {
 
     }
 
+/*
 
     override fun onBackPressed() {
 
     }
+*/
 
 
 }

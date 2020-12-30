@@ -44,9 +44,9 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragmentWithPassword"
-        android:name="com.example.userlogin.fragments.LoginFragmentWithPassword"
+        android:name="com.example.userlogin.fragments.LoginFragmentWithPasswordLib"
         android:label="fragment_login_with_password"
-        tools:layout="@layout/fragment_login_with_password">
+        tools:layout="@layout/fragment_login_with_password_lib">
         <action
             android:id="@+id/action_loginFragmentWithPassword_to_forgotPassword"
             app:destination="@id/forgotPasswordFragment" />

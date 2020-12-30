@@ -27,8 +27,8 @@ class LoginUserFragment : Fragment() {
     var progressBar = CustomProgressBar()
     lateinit var loginResponseDTO: LoginResponseDTO
 //    var emailAddress: String = ""
-//var emailAddress: String = "sagarmore53764@gmail.com"
-var emailAddress: String = "divyesh.tapase007@gmail.com"
+var emailAddress: String = "sagarmore53764@gmail.com"
+//var emailAddress: String = "divyesh.tapase007@gmail.com"
 //var emailAddress: String = "sagar.more@syspiretechnologies.com"s
 
     override fun onCreateView(

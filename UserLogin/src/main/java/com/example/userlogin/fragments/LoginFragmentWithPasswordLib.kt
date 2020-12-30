@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.userlogin.R
-import com.example.userlogin.databinding.FragmentLoginWithPasswordBinding
+import com.example.userlogin.databinding.FragmentLoginWithPasswordLibBinding
 import com.example.userlogin.models.LoginResponseDTO
 import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.CustomProgressBar
@@ -21,8 +21,8 @@ import com.example.userlogin.viewmodels.LoginViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class LoginFragmentWithPassword : Fragment() {
-    lateinit var binding: FragmentLoginWithPasswordBinding
+class LoginFragmentWithPasswordLib : Fragment() {
+    lateinit var binding: FragmentLoginWithPasswordLibBinding
     lateinit var viewModel: LoginViewModel
     var progressBar = CustomProgressBar()
 
@@ -40,7 +40,7 @@ class LoginFragmentWithPassword : Fragment() {
 
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_login_with_password,
+            R.layout.fragment_login_with_password_lib,
             container,
             false
         )
