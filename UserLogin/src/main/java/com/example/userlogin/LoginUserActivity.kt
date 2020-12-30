@@ -1,5 +1,6 @@
 package com.example.userlogin
 
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.userlogin.utils.Constants
@@ -7,6 +8,14 @@ import com.example.userlogin.utils.SnackbarUtils.showSnackbar
 import kotlinx.android.synthetic.main.activity_login_library.*
 
 class LoginUserActivity : AppCompatActivity() {
+
+    override fun setTheme(resId: Int) {
+        super.setTheme(resId)
+    }
+
+    override fun setTheme(theme: Resources.Theme?) {
+        super.setTheme(theme)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
