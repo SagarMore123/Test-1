@@ -12,7 +12,7 @@
 
         <activity
             android:name=".LoginUserActivity"
-            android:label=""
+            android:label="Login"
             android:theme="@style/AppTheme.NoActionBar" />
 
     </application>
