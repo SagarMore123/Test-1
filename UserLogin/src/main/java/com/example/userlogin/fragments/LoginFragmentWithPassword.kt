@@ -26,8 +26,8 @@ class LoginFragmentWithPassword : Fragment() {
     lateinit var viewModel: LoginViewModel
     var progressBar = CustomProgressBar()
 
-//        var emailAddress: String = "sagarmore53764@gmail.com"
-    private var emailAddress: String = ""
+        var emailAddress: String = "sagarmore53764@gmail.com"
+//    private var emailAddress: String = ""
     lateinit var loginResponseDTO: LoginResponseDTO
 
     override fun onCreateView(

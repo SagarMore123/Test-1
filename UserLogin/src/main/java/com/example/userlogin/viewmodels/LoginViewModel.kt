@@ -24,7 +24,7 @@ class LoginViewModel : GenericBaseObservable {
 
 //    var passwordEditTxt = MutableLiveData<String>("")
 
-                    var passwordEditTxt = MutableLiveData<String>("Sagar@123")
+    var passwordEditTxt = MutableLiveData<String>("Sagar@123")
     var loginIdError = MutableLiveData<String>("")
     var passwordError = MutableLiveData<String>("")
     lateinit var error: String
@@ -83,13 +83,14 @@ class LoginViewModel : GenericBaseObservable {
         userRepository.login(loginDTO, object : IDataSourceCallback<UserDTO> {
 
             override fun onDataFound(data: UserDTO) {
+                showProgressBar.value = false
 
                 sharedPreferences.edit()
                     ?.putString(Constants.IS_FIRST_TIME, Constants.encrypt(false.toString()))
                     ?.apply()
 
                 //Change the activity to your desired activity
-                getmSnackbar().value = "Logged In Successfully"
+                getmSnackbar().value = "Logged In Successfully\nthrough Android Library"
 /*
                 val intentToSyncImmediately = Intent(activity, MasterSyncIntentService::class.java)
                 intentToSyncImmediately.putExtra(Constants.IS_SPLASH_MASTER, false)
