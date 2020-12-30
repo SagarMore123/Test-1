@@ -14,7 +14,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.astrika.staffappchecqk.network.network_utils.IDataSourceCallback
 import com.example.userlogin.R
-import com.example.userlogin.databinding.AlreadyLoginPopupLayoutBinding
+import com.example.userlogin.databinding.AlreadyLoginPopupLayoutLibBinding
 import com.example.userlogin.models.LoginDTO
 import com.example.userlogin.models.LoginResponseDTO
 import com.example.userlogin.source.user.UserRepository
@@ -138,9 +138,9 @@ class FirstTimeLoginViewModel : GenericBaseObservable {
     }
 
     fun showAlreadyLoginDialog() {
-        val alreadyLoginPopUpLayoutBinding: AlreadyLoginPopupLayoutBinding =
+        val alreadyLoginPopUpLayoutBinding: AlreadyLoginPopupLayoutLibBinding =
             DataBindingUtil.inflate(
-                LayoutInflater.from(activity), R.layout.already_login_popup_layout, null, false
+                LayoutInflater.from(activity), R.layout.already_login_popup_layout_lib, null, false
             )
         val view: View = alreadyLoginPopUpLayoutBinding.root
         val alert =
