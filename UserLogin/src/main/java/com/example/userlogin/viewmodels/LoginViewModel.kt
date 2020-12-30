@@ -34,6 +34,10 @@ class LoginViewModel : GenericBaseObservable {
     var loginResponseDTOLiveData = MutableLiveData<LoginResponseDTO>()
     private var sharedPreferences: SharedPreferences
 
+    companion object{
+        var updateScreen = MutableLiveData(false)
+    }
+
     constructor(
         activity: Activity,
         application: Application,
@@ -91,16 +95,20 @@ class LoginViewModel : GenericBaseObservable {
 
                 //Change the activity to your desired activity
                 getmSnackbar().value = "Logged In Successfully\nthrough Android Library"
+                updateScreen.value = true
+
 /*
                 val intentToSyncImmediately = Intent(activity, MasterSyncIntentService::class.java)
                 intentToSyncImmediately.putExtra(Constants.IS_SPLASH_MASTER, false)
                 activity.startService(intentToSyncImmediately)
 */
+/*
 
-                /*val intent = Intent(activity, DashboardActivity::class.java)
+                val intent = Intent(activity, DashboardActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 activity.startActivity(intent)
-                showProgressBar.value = false*/
+//                showProgressBar.value = false
+*/
 
             }
 

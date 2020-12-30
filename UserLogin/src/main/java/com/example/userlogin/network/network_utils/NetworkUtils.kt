@@ -2,6 +2,7 @@ package com.example.userlogin.network.network_utils
 
 import android.content.Context
 import com.example.userlogin.network.NetworkController
+import com.example.userlogin.network.network_utils.NetworkUrls.Companion.SERVER_URL
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -32,7 +33,7 @@ class NetworkUtils {
             viewModelJob + Dispatchers.Main
         )
 
-        fun updateClientDispatcherRequests() :Dispatcher {
+        fun updateClientDispatcherRequests(): Dispatcher {
             //ADD DISPATCHER WITH MAX REQUEST TO 1
             val dispatcher = Dispatcher()
             dispatcher.maxRequests = 1
@@ -42,7 +43,7 @@ class NetworkUtils {
         private val client: OkHttpClient = OkHttpClient().newBuilder()
 //val client: OkHttpClient = getOkHttpClient()
             .dispatcher(updateClientDispatcherRequests())
-    .addInterceptor(AuthenticationInterceptorRefreshToken(this, NetworkController.mContext))
+            .addInterceptor(AuthenticationInterceptorRefreshToken(this, NetworkController.mContext))
             .authenticator(RefreshTokenAuthenticator(NetworkController.mContext))
             .connectTimeout(TIMEOUT, TimeUnit.SECONDS).readTimeout(TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(TIMEOUT, TimeUnit.SECONDS).build()
