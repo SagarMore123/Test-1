@@ -4,8 +4,10 @@
 
     <application>
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:name=".ui.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.AndroidModulesExample.NoActionBar"></activity>
+
     </application>
 
 </manifest>
