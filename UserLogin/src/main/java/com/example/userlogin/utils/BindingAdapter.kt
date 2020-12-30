@@ -11,7 +11,7 @@ import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.userlogin.R
-import com.example.userlogin.network.network_utils.SERVER_IMG_URL
+import com.example.userlogin.network.network_utils.NetworkUrls.Companion.SERVER_IMG_URL
 
 
 class BindingAdapter {
