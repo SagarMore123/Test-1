@@ -3,7 +3,7 @@ package com.example.userlogin.network.network_utils
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import com.example.userlogin.UserLoginActivity
+import com.example.userlogin.LoginUserActivity
 import com.example.userlogin.models.RefreshTokenDTO
 import com.example.userlogin.network.NetworkController
 import com.example.userlogin.network.UserApi
@@ -44,7 +44,7 @@ class RefreshTokenAuthenticator(private val context: Context) : Authenticator {
             return when {
                 responseNewTokenLoginModel.code() != 200 -> {
 //                AuthManager().authExpiredAndGoLogin(AndroidApplication().getContext())
-                    val intent = Intent(context, UserLoginActivity::class.java)
+                    val intent = Intent(context, LoginUserActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     intent.putExtra(Constants.ACCESS_TOKEN_INVALID, true)
                     if (context != null) {

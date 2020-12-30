@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.userlogin.R
-import com.example.userlogin.databinding.FragmentLoginBinding
+import com.example.userlogin.databinding.FragmentLoginUserBinding
 import com.example.userlogin.models.LoginResponseDTO
 import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.CustomProgressBar
@@ -20,9 +20,9 @@ import com.example.userlogin.viewmodels.FirstTimeLoginViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class LoginFragment : Fragment() {
+class LoginUserFragment : Fragment() {
 
-    lateinit var binding: FragmentLoginBinding
+    lateinit var binding: FragmentLoginUserBinding
     lateinit var viewModel: FirstTimeLoginViewModel
     var progressBar = CustomProgressBar()
     lateinit var loginResponseDTO: LoginResponseDTO
@@ -40,7 +40,7 @@ var emailAddress: String = "divyesh.tapase007@gmail.com"
             emailAddress = arguments?.getString(Constants.EMAIL_ID).toString()
         }
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login_user, container, false)
         viewModel = Utils.obtainBaseObservable(
             requireActivity(),
             FirstTimeLoginViewModel::class.java,

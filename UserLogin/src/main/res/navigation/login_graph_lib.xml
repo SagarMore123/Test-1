@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.userlogin.fragments.LoginFragment"
+        android:name="com.example.userlogin.fragments.LoginUserFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login">
+        tools:layout="@layout/fragment_login_user">
         <action
             android:id="@+id/action_loginFragment_to_verifyOtpFragment"
             app:destination="@id/verifyOtpFragment" />

@@ -6,7 +6,7 @@ import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.SnackbarUtils.showSnackbar
 import kotlinx.android.synthetic.main.activity_login_library.*
 
-class UserLoginActivity : AppCompatActivity() {
+class LoginUserActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
