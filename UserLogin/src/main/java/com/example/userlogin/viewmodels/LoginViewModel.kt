@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.astrika.staffappchecqk.network.network_utils.IDataSourceCallback
 import com.example.userlogin.models.LoginDTO
 import com.example.userlogin.models.LoginResponseDTO
@@ -36,6 +37,16 @@ class LoginViewModel : GenericBaseObservable {
 
     companion object{
         var updateScreen = MutableLiveData(false)
+
+        fun updateScreen(lifecycleOwner: LifecycleOwner, flag:MutableLiveData<Boolean>){
+
+            updateScreen.observe(lifecycleOwner, Observer {
+                if (it) {
+                    flag.value = true
+                }
+            })
+        }
+
     }
 
     constructor(
