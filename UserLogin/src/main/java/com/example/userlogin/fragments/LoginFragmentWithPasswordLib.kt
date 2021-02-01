@@ -1,5 +1,6 @@
 package com.example.userlogin.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -104,6 +105,15 @@ class LoginFragmentWithPasswordLib : Fragment() {
                 progressBar.show(requireActivity(), "Please Wait...")
             else
                 progressBar.dialog?.dismiss()
+        })
+
+        LoginViewModel.updateScreen.observe(viewLifecycleOwner, Observer {
+            if (it) {
+
+                val resultIntent = Intent()
+                requireActivity().setResult(1, resultIntent)
+                requireActivity().finish()
+            }
         })
 
     }
