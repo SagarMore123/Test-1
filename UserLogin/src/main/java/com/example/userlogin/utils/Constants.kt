@@ -32,8 +32,12 @@ class Constants{
         const val REFRESH_TOKEN = "REFRESH_TOKEN"
         const val IS_FIRST_TIME: String = "IS_FIRST_TIME"
 //        const val SOURCE = "STAFF_ANDROID_APP"
+/*
         const val SOURCE = "STAFFAPP"
         const val ROLE = "OUTLETSTAFF"
+*/
+        const val SOURCE = "RESTADMINANDROIDAPP"
+        const val ROLE = "OUTLETADMIN"
         const val ACCESS_TOKEN_INVALID = "ACCESS_TOKEN_INVALID"
 
         const val SELECT_FILE = 1

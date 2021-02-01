@@ -23,9 +23,9 @@ class LoginViewModel : GenericBaseObservable {
     private var userRepository: UserRepository
     var loginIdEditTxt = MutableLiveData<String>("")
 
-//    var passwordEditTxt = MutableLiveData<String>("")
+    var passwordEditTxt = MutableLiveData<String>("")
 
-    var passwordEditTxt = MutableLiveData<String>("Sagar@123")
+//    var passwordEditTxt = MutableLiveData<String>("Sagar@123")
     var loginIdError = MutableLiveData<String>("")
     var passwordError = MutableLiveData<String>("")
     lateinit var error: String
