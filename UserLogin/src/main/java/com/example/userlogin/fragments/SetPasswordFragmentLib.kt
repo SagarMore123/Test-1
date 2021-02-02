@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.userlogin.R
-import com.example.userlogin.databinding.FragmentSetPasswordBinding
+import com.example.userlogin.databinding.FragmentSetPasswordLibBinding
 import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.CustomProgressBar
 import com.example.userlogin.utils.Utils
@@ -20,9 +20,9 @@ import com.example.userlogin.viewmodels.SetPasswordViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class SetPasswordFragment : Fragment() {
+class SetPasswordFragmentLib : Fragment() {
 
-    lateinit var binding: FragmentSetPasswordBinding
+    lateinit var binding: FragmentSetPasswordLibBinding
     lateinit var viewModel: SetPasswordViewModel
     var progressBar = CustomProgressBar()
     var emailAddress: String = ""
@@ -34,7 +34,8 @@ class SetPasswordFragment : Fragment() {
         // Inflate the layout for this fragment
         emailAddress = arguments?.getString(Constants.EMAIL_ID).toString()
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_set_password, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_set_password_lib, container, false)
         viewModel = Utils.obtainBaseObservable(
             activity as AppCompatActivity,
             SetPasswordViewModel::class.java,
@@ -78,18 +79,20 @@ class SetPasswordFragment : Fragment() {
         })
 
         viewModel.navigateToNextScreen.observe(viewLifecycleOwner, Observer {
-            if(it){
+            if (it) {
                 val bundle = Bundle()
-                bundle.putString(Constants.EMAIL_ID,emailAddress)
-                binding.root.findNavController().navigate(R.id.action_setPasswordFragment_to_loginFragmentWithPassword,bundle)
+                bundle.putString(Constants.EMAIL_ID, emailAddress)
+                binding.root.findNavController()
+                    .navigate(R.id.action_setPasswordFragment_to_loginFragmentWithPassword, bundle)
             }
         })
 
         viewModel.closeClicked.observe(viewLifecycleOwner, Observer {
-            if(it){
+            if (it) {
                 val bundle = Bundle()
-                bundle.putString(Constants.EMAIL_ID,emailAddress)
-                binding.root.findNavController().navigate(R.id.action_setPasswordFragment_to_loginFragment,bundle)
+                bundle.putString(Constants.EMAIL_ID, emailAddress)
+                binding.root.findNavController()
+                    .navigate(R.id.action_setPasswordFragment_to_loginFragment, bundle)
             }
         })
     }

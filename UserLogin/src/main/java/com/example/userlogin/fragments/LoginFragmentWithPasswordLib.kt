@@ -111,6 +111,7 @@ class LoginFragmentWithPasswordLib : Fragment() {
             if (it) {
 
                 val resultIntent = Intent()
+                resultIntent.putExtra("accessToken", Constants.getAccessToken(requireActivity()))
                 requireActivity().setResult(1, resultIntent)
                 requireActivity().finish()
             }

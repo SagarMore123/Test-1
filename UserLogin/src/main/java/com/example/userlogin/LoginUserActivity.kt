@@ -4,14 +4,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.SnackbarUtils.showSnackbar
-import kotlinx.android.synthetic.main.activity_login_library.*
+import kotlinx.android.synthetic.main.activity_user_login.*
 
 class LoginUserActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_library)
+        setContentView(R.layout.activity_user_login)
 
 
         val bundle = intent.extras

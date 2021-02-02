@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.userlogin.R
-import com.example.userlogin.databinding.FragmentVerifyOtpBinding
+import com.example.userlogin.databinding.FragmentVerifyOtpLibBinding
 import com.example.userlogin.models.LoginResponseDTO
 import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.CustomProgressBar
@@ -21,9 +21,9 @@ import com.example.userlogin.viewmodels.VerifyOtpViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class VerifyOtpFragment : Fragment() {
+class VerifyOtpFragmentLib : Fragment() {
 
-    lateinit var binding: FragmentVerifyOtpBinding
+    lateinit var binding: FragmentVerifyOtpLibBinding
     lateinit var viewModel: VerifyOtpViewModel
     lateinit var loginResponseDTO: LoginResponseDTO
     var emailAddress: String = ""
@@ -39,7 +39,8 @@ class VerifyOtpFragment : Fragment() {
         loginResponseDTO = arguments?.get(Constants.LOGIN_RESPONSE) as LoginResponseDTO
         emailAddress = arguments?.getString(Constants.EMAIL_ID).toString()
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_verify_otp, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_verify_otp_lib, container, false)
         viewModel = Utils.obtainBaseObservable(
             activity as AppCompatActivity,
             VerifyOtpViewModel::class.java,
@@ -124,8 +125,6 @@ class VerifyOtpFragment : Fragment() {
             Constants.showToastMessage(context, message)
         }
     }
-
-
 
 
 }

@@ -20,9 +20,9 @@
     </fragment>
     <fragment
         android:id="@+id/verifyOtpFragment"
-        android:name="com.example.userlogin.fragments.VerifyOtpFragment"
+        android:name="com.example.userlogin.fragments.VerifyOtpFragmentLib"
         android:label="fragment_verify_otp"
-        tools:layout="@layout/fragment_verify_otp">
+        tools:layout="@layout/fragment_verify_otp_lib">
         <action
             android:id="@+id/action_verifyOtpFragment_to_setPasswordFragment"
             app:destination="@id/setPasswordFragment" />
@@ -32,9 +32,9 @@
     </fragment>
     <fragment
         android:id="@+id/setPasswordFragment"
-        android:name="com.example.userlogin.fragments.SetPasswordFragment"
+        android:name="com.example.userlogin.fragments.SetPasswordFragmentLib"
         android:label="fragment_set_password"
-        tools:layout="@layout/fragment_set_password">
+        tools:layout="@layout/fragment_set_password_lib">
         <action
             android:id="@+id/action_setPasswordFragment_to_loginFragmentWithPassword"
             app:destination="@id/loginFragmentWithPassword" />
@@ -56,9 +56,9 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.userlogin.fragments.ForgotPasswordFragment"
+        android:name="com.example.userlogin.fragments.ForgotPasswordFragmentLib"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" >
+        tools:layout="@layout/fragment_forgot_password_lib">
         <action
             android:id="@+id/action_forgotPasswordFragment_to_setPasswordFragment"
             app:destination="@id/setPasswordFragment" />

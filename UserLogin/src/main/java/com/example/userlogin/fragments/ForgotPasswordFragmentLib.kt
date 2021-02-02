@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.userlogin.R
-import com.example.userlogin.databinding.FragmentForgotPasswordBinding
+import com.example.userlogin.databinding.FragmentForgotPasswordLibBinding
 import com.example.userlogin.models.LoginResponseDTO
 import com.example.userlogin.utils.Constants
 import com.example.userlogin.utils.CustomProgressBar
@@ -21,9 +21,9 @@ import com.example.userlogin.viewmodels.VerifyOtpViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class ForgotPasswordFragment : Fragment() {
+class ForgotPasswordFragmentLib : Fragment() {
 
-    lateinit var binding: FragmentForgotPasswordBinding
+    lateinit var binding: FragmentForgotPasswordLibBinding
     lateinit var viewModel: VerifyOtpViewModel
     var progressBar = CustomProgressBar()
     lateinit var loginResponseDTO: LoginResponseDTO
@@ -40,8 +40,10 @@ class ForgotPasswordFragment : Fragment() {
         forgotPassword = arguments?.getBoolean(Constants.IS_FORGOT_PASS)!!
 
 
-        binding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_forgot_password,container,false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_forgot_password_lib, container, false
+        )
         viewModel = Utils.obtainBaseObservable(
             activity as AppCompatActivity,
             VerifyOtpViewModel::class.java,
@@ -79,7 +81,7 @@ class ForgotPasswordFragment : Fragment() {
     private fun viewModelObserver() {
         viewModel.loginResponseDTOLiveData.observe(viewLifecycleOwner, Observer {
             loginResponseDTO = it
-            if(viewModel.resendOtpClicked.value == true){
+            if (viewModel.resendOtpClicked.value == true) {
                 showOtpMessage()
             }
         })
@@ -96,18 +98,20 @@ class ForgotPasswordFragment : Fragment() {
         })
 
         viewModel.navigateToNextScreen.observe(viewLifecycleOwner, Observer {
-            if(it){
+            if (it) {
                 val bundle = Bundle()
-                bundle.putString(Constants.EMAIL_ID,emailAddress)
-                binding.root.findNavController().navigate(R.id.action_forgotPasswordFragment_to_setPasswordFragment,bundle)
+                bundle.putString(Constants.EMAIL_ID, emailAddress)
+                binding.root.findNavController()
+                    .navigate(R.id.action_forgotPasswordFragment_to_setPasswordFragment, bundle)
             }
         })
 
         viewModel.closeClicked.observe(viewLifecycleOwner, Observer {
-            if(it){
+            if (it) {
                 val bundle = Bundle()
-                bundle.putString(Constants.EMAIL_ID,emailAddress)
-                binding.root.findNavController().navigate(R.id.action_forgotPasswordFragment_to_loginFragment,bundle)
+                bundle.putString(Constants.EMAIL_ID, emailAddress)
+                binding.root.findNavController()
+                    .navigate(R.id.action_forgotPasswordFragment_to_loginFragment, bundle)
             }
         })
 
@@ -115,7 +119,7 @@ class ForgotPasswordFragment : Fragment() {
     }
 
     //start the timer and show the message
-    private fun showOtpMessage(){
+    private fun showOtpMessage() {
         val timer = loginResponseDTO.otpExpireTime
         viewModel.startTimer(timer)
         viewModel.verifyOtpTimerVisibility.value = true
